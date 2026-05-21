@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-import type { User } from "./models/User";
+import UserView from "./UserView";
+import { Container, Typography } from "@mui/material";
+import type { User } from "../../models/User";
 
 function Users() {
   console.log("Component Rendering");
@@ -14,7 +16,6 @@ function Users() {
       })
       .then((data) => {
         console.log("Data:", data);
-
         addUser([data]);
       })
       .catch((error) => {
@@ -33,18 +34,12 @@ function Users() {
       },
     ]);
   };
+
   return (
-    <div>
-      <h1>Users Component</h1>
-      <label>Name</label>
-      <input id="Name"></input>
-      <ul>
-        {users.map((item, index) => (
-          <li key={index}>{item.title}</li>
-        ))}
-      </ul>
-      <button onClick={setUser}>Add</button>
-    </div>
+    <Container maxWidth="xl">
+      <Typography variant="h4">Users Component</Typography>
+      <UserView passingUsers={users} passingSetUser={setUser}></UserView>
+    </Container>
   );
 }
 
