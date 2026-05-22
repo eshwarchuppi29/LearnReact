@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import UserView from "./UserView";
+import UserListView from "./UserListView";
 import { Container, Typography } from "@mui/material";
 import type { User } from "../../models/User";
 
@@ -38,7 +38,10 @@ function Users() {
   return (
     <Container maxWidth="xl">
       <Typography variant="h4">Users Component</Typography>
-      <UserView passingUsers={users} passingSetUser={setUser}></UserView>
+      <UserListView
+        passingUsers={users}
+        passingSetUser={setUser}
+      ></UserListView>
     </Container>
   );
 }
