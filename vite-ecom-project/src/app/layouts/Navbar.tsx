@@ -1,6 +1,12 @@
-import { AppBar, Box, Toolbar, Typography } from "@mui/material";
+import { DarkMode, LightMode } from "@mui/icons-material";
+import { AppBar, Box, IconButton, Toolbar, Typography } from "@mui/material";
 
-export default function Navbar() {
+type props = {
+  darkMode: boolean;
+  changeMode: () => void;
+};
+
+export default function Navbar({ darkMode, changeMode }: props) {
   return (
     <>
       <AppBar position="fixed">
@@ -14,6 +20,13 @@ export default function Navbar() {
             }}
           >
             <Typography variant="h4">Store</Typography>
+            <IconButton onClick={changeMode}>
+              {darkMode ? (
+                <LightMode sx={{ color: "yellow" }} />
+              ) : (
+                <DarkMode sx={{ color: "white" }} />
+              )}
+            </IconButton>
           </Box>
         </Toolbar>
       </AppBar>

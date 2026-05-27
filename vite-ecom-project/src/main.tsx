@@ -7,14 +7,11 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import AllCatalog from "./app/features/catalog/AllCatalog.tsx";
-import Navbar from "./app/layouts/Navbar.jsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     {/* <App />
     <Users /> */}
-    <Navbar></Navbar>
-    <br></br>
     <AllCatalog></AllCatalog>
   </StrictMode>,
 );
