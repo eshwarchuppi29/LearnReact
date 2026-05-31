@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/api-ecom-net9-project.props" />
+</Project>

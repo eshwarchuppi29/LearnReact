@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "T2dexxQvR7U=",
+  "success": true,
+  "projectFilePath": "/home/eshwar/JobChange/LearnReact/api-ecom-net9-project/api-ecom-net9-project.csproj",
+  "expectedPackageFiles": [
+    "/home/eshwar/.nuget/packages/microsoft.aspnetcore.openapi/9.0.4/microsoft.aspnetcore.openapi.9.0.4.nupkg.sha512",
+    "/home/eshwar/.nuget/packages/microsoft.openapi/1.6.17/microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}
