@@ -7,6 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import type { Product } from "../../models/Product";
+import { Link } from "react-router";
 
 type props = {
   product: Product;
@@ -39,13 +40,15 @@ export default function ProductCard({ product }: props) {
         <Typography gutterBottom sx={{ color: "secondary.main" }} variant="h6">
           Rs.{(product.price / 100).toFixed(2)}
         </Typography>
-        <Typography gutterBottom sx={{ color: "black", fontSize: "15px" }}>
+        <Typography gutterBottom sx={{ color: "inherit", fontSize: "15px" }}>
           {product.description}
         </Typography>
       </CardContent>
       <CardActions sx={{ justifyContent: "space-between" }}>
         <Button>Add to Cart</Button>
-        <Button>View Cart</Button>
+        <Button component={Link} to={`/productlist/${product.productId}`}>
+          View
+        </Button>
       </CardActions>
       <br></br>
     </Card>

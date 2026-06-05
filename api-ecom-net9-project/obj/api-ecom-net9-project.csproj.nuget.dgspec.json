@@ -1,25 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "/home/eshwar/JobChange/LearnReact/api-ecom-net9-project/api-ecom-net9-project.csproj": {}
+    "d:\\JobChange\\React\\ecommerceapp\\api-ecom-net9-project\\api-ecom-net9-project.csproj": {}
   },
   "projects": {
-    "/home/eshwar/JobChange/LearnReact/api-ecom-net9-project/api-ecom-net9-project.csproj": {
+    "d:\\JobChange\\React\\ecommerceapp\\api-ecom-net9-project\\api-ecom-net9-project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/eshwar/JobChange/LearnReact/api-ecom-net9-project/api-ecom-net9-project.csproj",
+        "projectUniqueName": "d:\\JobChange\\React\\ecommerceapp\\api-ecom-net9-project\\api-ecom-net9-project.csproj",
         "projectName": "api-ecom-net9-project",
-        "projectPath": "/home/eshwar/JobChange/LearnReact/api-ecom-net9-project/api-ecom-net9-project.csproj",
-        "packagesPath": "/home/eshwar/.nuget/packages/",
-        "outputPath": "/home/eshwar/JobChange/LearnReact/api-ecom-net9-project/obj/",
+        "projectPath": "d:\\JobChange\\React\\ecommerceapp\\api-ecom-net9-project\\api-ecom-net9-project.csproj",
+        "packagesPath": "C:\\Users\\91741\\.nuget\\packages\\",
+        "outputPath": "d:\\JobChange\\React\\ecommerceapp\\api-ecom-net9-project\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/eshwar/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\91741\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,7 +45,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net9.0": {
@@ -68,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

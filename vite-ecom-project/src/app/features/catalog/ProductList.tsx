@@ -1,22 +1,32 @@
-import { Box, Button, Container } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import type { Product } from "../../models/Product";
 import ProductView from "./ProductView";
+import { useEffect, useState } from "react";
 
-type props = {
-  products: Product[];
-  setProduct: () => void;
-};
+export default function ProductList() {
+  const [products, AddProduct] = useState<Product[]>([]);
 
-export default function ProductList({ products, setProduct }: props) {
+  useEffect(() => {
+    console.log("Product Initial Loading");
+
+    fetch("http://localhost:5199/api/product")
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        AddProduct(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   return (
     <Container maxWidth="xl">
       <Box
         sx={{ display: "flex", justifyContent: "center", gap: 3, marginY: 3 }}
-      >
-        <Button variant="contained" onClick={setProduct}>
-          Add-Product
-        </Button>
-      </Box>
+      ></Box>
       <ProductView products={products}></ProductView>
     </Container>
   );

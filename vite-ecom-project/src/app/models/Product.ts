@@ -4,4 +4,7 @@ export interface Product {
   description: string
   image: string
   price: number
+  brand:string
+  thisype:string
+  stock:number
 }
