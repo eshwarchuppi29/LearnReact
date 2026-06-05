@@ -9,13 +9,19 @@ import "@fontsource/roboto/700.css";
 
 import { RouterProvider } from "react-router";
 import { router } from "./app/routes/Routes";
+import { Provider } from "react-redux";
+import { configureTheStore } from "./app/store/store";
+
+const store = configureTheStore();
+console.log(store);
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     {/* <App />
     <Users /> */}
     {/* <AllCatalog></AllCatalog> */}
-
-    <RouterProvider router={router}></RouterProvider>
+    <Provider store={store}>
+      <RouterProvider router={router}></RouterProvider>
+    </Provider>
   </StrictMode>,
 );
