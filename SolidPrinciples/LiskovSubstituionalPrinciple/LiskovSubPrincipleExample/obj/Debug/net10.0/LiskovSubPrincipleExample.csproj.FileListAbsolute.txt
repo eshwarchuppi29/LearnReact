@@ -1,0 +1,15 @@
+D:\JobChange\React\ecommerceapp\SolidPrinciples\LiskovSubstituionalPrinciple\LiskovSubPrincipleExample\obj\Debug\net10.0\LiskovSubPrincipleExample.GeneratedMSBuildEditorConfig.editorconfig
+D:\JobChange\React\ecommerceapp\SolidPrinciples\LiskovSubstituionalPrinciple\LiskovSubPrincipleExample\obj\Debug\net10.0\LiskovSubPrincipleExample.AssemblyInfoInputs.cache
+D:\JobChange\React\ecommerceapp\SolidPrinciples\LiskovSubstituionalPrinciple\LiskovSubPrincipleExample\obj\Debug\net10.0\LiskovSubPrincipleExample.AssemblyInfo.cs
+D:\JobChange\React\ecommerceapp\SolidPrinciples\LiskovSubstituionalPrinciple\LiskovSubPrincipleExample\obj\Debug\net10.0\LiskovSubPrincipleExample.csproj.CoreCompileInputs.cache
+D:\JobChange\React\ecommerceapp\SolidPrinciples\LiskovSubstituionalPrinciple\LiskovSubPrincipleExample\obj\Debug\net10.0\LiskovSubPrincipleExample.sourcelink.json
+D:\JobChange\React\ecommerceapp\SolidPrinciples\LiskovSubstituionalPrinciple\LiskovSubPrincipleExample\bin\Debug\net10.0\LiskovSubPrincipleExample.exe
+D:\JobChange\React\ecommerceapp\SolidPrinciples\LiskovSubstituionalPrinciple\LiskovSubPrincipleExample\bin\Debug\net10.0\LiskovSubPrincipleExample.deps.json
+D:\JobChange\React\ecommerceapp\SolidPrinciples\LiskovSubstituionalPrinciple\LiskovSubPrincipleExample\bin\Debug\net10.0\LiskovSubPrincipleExample.runtimeconfig.json
+D:\JobChange\React\ecommerceapp\SolidPrinciples\LiskovSubstituionalPrinciple\LiskovSubPrincipleExample\bin\Debug\net10.0\LiskovSubPrincipleExample.dll
+D:\JobChange\React\ecommerceapp\SolidPrinciples\LiskovSubstituionalPrinciple\LiskovSubPrincipleExample\bin\Debug\net10.0\LiskovSubPrincipleExample.pdb
+D:\JobChange\React\ecommerceapp\SolidPrinciples\LiskovSubstituionalPrinciple\LiskovSubPrincipleExample\obj\Debug\net10.0\LiskovSubPrincipleExample.dll
+D:\JobChange\React\ecommerceapp\SolidPrinciples\LiskovSubstituionalPrinciple\LiskovSubPrincipleExample\obj\Debug\net10.0\refint\LiskovSubPrincipleExample.dll
+D:\JobChange\React\ecommerceapp\SolidPrinciples\LiskovSubstituionalPrinciple\LiskovSubPrincipleExample\obj\Debug\net10.0\LiskovSubPrincipleExample.pdb
+D:\JobChange\React\ecommerceapp\SolidPrinciples\LiskovSubstituionalPrinciple\LiskovSubPrincipleExample\obj\Debug\net10.0\LiskovSubPrincipleExample.genruntimeconfig.cache
+D:\JobChange\React\ecommerceapp\SolidPrinciples\LiskovSubstituionalPrinciple\LiskovSubPrincipleExample\obj\Debug\net10.0\ref\LiskovSubPrincipleExample.dll

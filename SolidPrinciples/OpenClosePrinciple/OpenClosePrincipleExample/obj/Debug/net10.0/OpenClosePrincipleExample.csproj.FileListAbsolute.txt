@@ -1,0 +1,15 @@
+D:\JobChange\React\ecommerceapp\SolidPrinciples\OpenClosePrinciple\opencloseprincipleexample\obj\Debug\net10.0\OpenClosePrincipleExample.GeneratedMSBuildEditorConfig.editorconfig
+D:\JobChange\React\ecommerceapp\SolidPrinciples\OpenClosePrinciple\opencloseprincipleexample\obj\Debug\net10.0\OpenClosePrincipleExample.AssemblyInfoInputs.cache
+D:\JobChange\React\ecommerceapp\SolidPrinciples\OpenClosePrinciple\opencloseprincipleexample\obj\Debug\net10.0\OpenClosePrincipleExample.AssemblyInfo.cs
+D:\JobChange\React\ecommerceapp\SolidPrinciples\OpenClosePrinciple\opencloseprincipleexample\obj\Debug\net10.0\OpenClosePrincipleExample.csproj.CoreCompileInputs.cache
+D:\JobChange\React\ecommerceapp\SolidPrinciples\OpenClosePrinciple\opencloseprincipleexample\obj\Debug\net10.0\OpenClosePrincipleExample.sourcelink.json
+D:\JobChange\React\ecommerceapp\SolidPrinciples\OpenClosePrinciple\OpenClosePrincipleExample\bin\Debug\net10.0\OpenClosePrincipleExample.exe
+D:\JobChange\React\ecommerceapp\SolidPrinciples\OpenClosePrinciple\OpenClosePrincipleExample\bin\Debug\net10.0\OpenClosePrincipleExample.deps.json
+D:\JobChange\React\ecommerceapp\SolidPrinciples\OpenClosePrinciple\OpenClosePrincipleExample\bin\Debug\net10.0\OpenClosePrincipleExample.runtimeconfig.json
+D:\JobChange\React\ecommerceapp\SolidPrinciples\OpenClosePrinciple\OpenClosePrincipleExample\bin\Debug\net10.0\OpenClosePrincipleExample.dll
+D:\JobChange\React\ecommerceapp\SolidPrinciples\OpenClosePrinciple\OpenClosePrincipleExample\bin\Debug\net10.0\OpenClosePrincipleExample.pdb
+D:\JobChange\React\ecommerceapp\SolidPrinciples\OpenClosePrinciple\OpenClosePrincipleExample\obj\Debug\net10.0\OpenClosePrincipleExample.dll
+D:\JobChange\React\ecommerceapp\SolidPrinciples\OpenClosePrinciple\OpenClosePrincipleExample\obj\Debug\net10.0\refint\OpenClosePrincipleExample.dll
+D:\JobChange\React\ecommerceapp\SolidPrinciples\OpenClosePrinciple\OpenClosePrincipleExample\obj\Debug\net10.0\OpenClosePrincipleExample.pdb
+D:\JobChange\React\ecommerceapp\SolidPrinciples\OpenClosePrinciple\OpenClosePrincipleExample\obj\Debug\net10.0\OpenClosePrincipleExample.genruntimeconfig.cache
+D:\JobChange\React\ecommerceapp\SolidPrinciples\OpenClosePrinciple\OpenClosePrincipleExample\obj\Debug\net10.0\ref\OpenClosePrincipleExample.dll

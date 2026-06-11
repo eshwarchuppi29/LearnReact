@@ -1,0 +1,4 @@
+interface IEmployeeBase
+{
+    decimal MinimumSalary();
+}
