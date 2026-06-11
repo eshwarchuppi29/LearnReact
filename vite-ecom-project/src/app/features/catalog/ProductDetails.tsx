@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-import type { Product } from "../../models/Product";
 import { Link, useParams } from "react-router";
 import {
   Button,
@@ -13,26 +11,13 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
+import { useFetchProductDetailsQuery } from "../../services/ProductList";
 
 export default function ProductDetails() {
   const { id } = useParams<{ id: string }>();
-  const [product, setProductById] = useState<Product | null>(null);
-
-  useEffect(() => {
-    if (!id) return;
-
-    console.log("Product Initial Loading");
-
-    fetch(`http://localhost:5199/api/product/${id}`)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        setProductById(data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, [id]);
+  const { data: product, isLoading } = useFetchProductDetailsQuery(
+    id ? parseInt(id) : 0,
+  );
 
   const productDetails = [
     {
@@ -53,7 +38,7 @@ export default function ProductDetails() {
     },
   ];
 
-  if (!product) return <div>Loading...</div>;
+  if (isLoading || !product) return <div>Loading...</div>;
 
   return (
     <div>
