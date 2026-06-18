@@ -2,6 +2,8 @@ import { configureStore } from "@reduxjs/toolkit";
 import { counterSlice } from "../features/contact/counterReduce";
 import { useDispatch, useSelector } from "react-redux";
 import { productList } from "../services/ProductList";
+import { loadIndicator } from "../layouts/loader";
+import { darkTheme } from "../settings/themeSetting";
 
 // import currentReducer from "../features/contact/counterReduce";
 // export function configureTheStore() {
@@ -12,6 +14,8 @@ export const store = configureStore({
   reducer: {
     [productList.reducerPath]: productList.reducer,
     counter: counterSlice.reducer,
+    uiLoadIndicator: loadIndicator.reducer,
+    themeChange: darkTheme.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(productList.middleware),

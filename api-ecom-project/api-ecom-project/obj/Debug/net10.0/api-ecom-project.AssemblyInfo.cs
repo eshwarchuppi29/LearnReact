@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("api-ecom-project")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a5870d83c7533bb85c31f716d342ee37dbe53a80")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+31482a161405b69beacfa249bfb0457c18c503be")]
 [assembly: System.Reflection.AssemblyProductAttribute("api-ecom-project")]
 [assembly: System.Reflection.AssemblyTitleAttribute("api-ecom-project")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

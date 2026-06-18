@@ -4,12 +4,14 @@ import {
   Badge,
   Box,
   IconButton,
+  LinearProgress,
   List,
   ListItem,
   Toolbar,
   Typography,
 } from "@mui/material";
 import { NavLink } from "react-router";
+import { useAppSelector } from "../store/store";
 
 const midLinks = [
   {
@@ -55,6 +57,7 @@ const goToCart = () => {
 };
 
 export default function Navbar({ darkMode, changeMode }: props) {
+  const { isLoading } = useAppSelector((state) => state.uiLoadIndicator);
   return (
     <>
       <AppBar position="fixed">
@@ -114,6 +117,11 @@ export default function Navbar({ darkMode, changeMode }: props) {
             </List>
           </Box>
         </Toolbar>
+        {isLoading && (
+          <Box sx={{ width: "100%" }}>
+            <LinearProgress aria-label="Loading…" color="secondary" />
+          </Box>
+        )}
       </AppBar>
     </>
   );
