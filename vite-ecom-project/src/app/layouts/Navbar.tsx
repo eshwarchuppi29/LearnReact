@@ -10,8 +10,9 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import { useAppSelector } from "../store/store";
+import { useFetchBasketQuery } from "../services/basketViewRepo";
 
 const midLinks = [
   {
@@ -52,12 +53,10 @@ type props = {
   changeMode: () => void;
 };
 
-const goToCart = () => {
-  window.alert("Empty Cart");
-};
-
 export default function Navbar({ darkMode, changeMode }: props) {
   const { isLoading } = useAppSelector((state) => state.uiLoadIndicator);
+  const { data } = useFetchBasketQuery();
+  const cartCount = data?.length;
   return (
     <>
       <AppBar position="fixed">
@@ -98,8 +97,13 @@ export default function Navbar({ darkMode, changeMode }: props) {
             ))}
           </List>
           <Box sx={{ display: "flex", alignItems: "right" }}>
-            <IconButton size="large" color="inherit" onClick={goToCart}>
-              <Badge badgeContent="9" color="secondary">
+            <IconButton
+              component={Link}
+              to="/basket"
+              size="large"
+              color="inherit"
+            >
+              <Badge badgeContent={cartCount} color="secondary">
                 <ShoppingCart></ShoppingCart>
               </Badge>
             </IconButton>

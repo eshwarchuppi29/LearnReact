@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { productList } from "../services/ProductList";
 import { loadIndicator } from "../layouts/loader";
 import { darkTheme } from "../settings/themeSetting";
+import { errorResponseApi } from "../services/errorResponse";
+import { basketViewRepo } from "../services/basketViewRepo";
 
 // import currentReducer from "../features/contact/counterReduce";
 // export function configureTheStore() {
@@ -13,12 +15,18 @@ import { darkTheme } from "../settings/themeSetting";
 export const store = configureStore({
   reducer: {
     [productList.reducerPath]: productList.reducer,
+    [errorResponseApi.reducerPath]: errorResponseApi.reducer,
+    [basketViewRepo.reducerPath]: basketViewRepo.reducer,
     counter: counterSlice.reducer,
     uiLoadIndicator: loadIndicator.reducer,
     themeChange: darkTheme.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(productList.middleware),
+    getDefaultMiddleware().concat(
+      productList.middleware,
+      errorResponseApi.middleware,
+      basketViewRepo.middleware,
+    ),
 });
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;

@@ -5,6 +5,9 @@ import ProductList from "../features/catalog/ProductList";
 import AboutPage from "../features/about/AboutPage";
 import ContactPage from "../features/contact/ContactPage";
 import ProductDetails from "../features/catalog/ProductDetails";
+import ServerErrors from "../features/errors/ServerErrors";
+import NotFound from "../features/errors/NotFound";
+import BasketView from "../features/basket/BasketView";
 
 export const router = createBrowserRouter([
   {
@@ -30,6 +33,22 @@ export const router = createBrowserRouter([
       {
         path: "/contact",
         element: <ContactPage />,
+      },
+      {
+        path: "/basket",
+        element: <BasketView />,
+      },
+      {
+        path: "/servererror",
+        element: <ServerErrors />,
+      },
+      {
+        path: "/notfound",
+        element: <NotFound />,
+      },
+      {
+        path: "*",
+        element: <NotFound />,
       },
     ],
   },
