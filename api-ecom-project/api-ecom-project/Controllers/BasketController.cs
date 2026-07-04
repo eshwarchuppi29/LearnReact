@@ -1,5 +1,6 @@
 using api_ecom_project.services;
 using ApiEcomProject.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,139 +12,70 @@ namespace ApiEcomProject.Controllers
     [Route("api/[controller]")]
     public class BasketController : ControllerBase
     {
-        private static readonly List<Basket> Baskets = new List<Basket>();
+        private static readonly Basket Basket = new Basket
+        {
+            Id = Guid.NewGuid(),
+            Items = new List<BasketItem>()
+        };
 
         [HttpGet]
-        public ActionResult<List<Basket>> GetBaskets()
+        public ActionResult<Basket> GetBasket()
         {
-            return Ok(Baskets);
-        }
-
-        [HttpGet("{id}")]
-        public ActionResult<Basket> GetBasket(Guid id)
-        {
-            var basket = Baskets.FirstOrDefault(b => b.Id == id);
-            if (basket == null) return NotFound();
-            return Ok(basket);
+            return Ok(Basket);
         }
 
         [HttpPost("{productId}/{quantity}")]
-        public ActionResult<Basket> CreateBasket([FromUri] int productId, int quantity)
+        public ActionResult<Basket> AddToBasket(int productId, int quantity)
         {
-            var productDet = new ProductService().GetProduct().Where(p => p.ProductId == productId).FirstOrDefault();
-            Basket basket = new Basket();
-            basket.Id = Guid.NewGuid();
-            basket.Items = new List<BasketItem>(){new BasketItem(){
-                    Name=productDet.Name,
-                    Brand=productDet.Brand,
-                    Description=productDet.Description,
-                    Image=productDet.Image,
-                    Price=productDet.Price,
-                    ProductId= productDet.ProductId,
-                    Quantity=quantity,
-                    Stock= productDet.Stock,
-                    Type= productDet.Type
-                }};
-            Baskets.Add(basket);
-            return CreatedAtAction(nameof(GetBasket), new { id = basket.Id }, basket);
-        }
+            var product = new ProductService()
+                .GetProduct()
+                .FirstOrDefault(p => p.ProductId == productId);
 
-        [HttpPost]
-        public ActionResult<Basket> CreateBasket([FromBody] Basket basket)
-        {
-            if (basket == null)
+            if (product == null)
+                return NotFound("Product not found.");
+
+            var existingItem = Basket.Items
+                .FirstOrDefault(i => i.ProductId == productId);
+
+            if (existingItem != null)
             {
-                return BadRequest();
+                existingItem.Quantity += quantity;
+            }
+            else
+            {
+                Basket.Items.Add(new BasketItem
+                {
+                    Name = product.Name,
+                    Brand = product.Brand,
+                    Description = product.Description,
+                    Image = product.Image,
+                    Price = product.Price,
+                    ProductId = product.ProductId,
+                    Quantity = quantity,
+                    Stock = product.Stock,
+                    Type = product.Type
+                });
             }
 
-            basket.Id = Guid.NewGuid();
-            basket.Items = basket.Items ?? new List<BasketItem>();
-            Baskets.Add(basket);
-            return CreatedAtAction(nameof(GetBasket), new { id = basket.Id }, basket);
+            return Ok(Basket);
         }
 
-        [HttpPut("{id}")]
-        public ActionResult<Basket> UpdateBasket(Guid id, [FromBody] Basket updatedBasket)
+        [HttpDelete("{productId}/{quantity}")]
+        public IActionResult DeleteBasket(int productId, int quantity)
         {
-            var basket = Baskets.FirstOrDefault(b => b.Id == id);
-            if (basket == null) return NotFound();
-            if (updatedBasket == null) return BadRequest();
+            var item = Basket.Items.FirstOrDefault(i => i.ProductId == productId);
+            if (item == null)
+                return NotFound();
 
-            basket.Items = updatedBasket.Items ?? new List<BasketItem>();
-            return Ok(basket);
-        }
-
-        [HttpDelete("{id}")]
-        public IActionResult DeleteBasket(Guid id)
-        {
-            var basket = Baskets.FirstOrDefault(b => b.Id == id);
-            if (basket == null) return NotFound();
-            Baskets.Remove(basket);
+            if (quantity >= item.Quantity)
+            {
+                Basket.Items.Remove(item);
+            }
+            else
+            {
+                item.Quantity -= quantity;
+            }
             return NoContent();
         }
-
-        [HttpGet("{basketId}/items")]
-        public ActionResult<List<BasketItem>> GetBasketItems(Guid basketId)
-        {
-            var basket = Baskets.FirstOrDefault(b => b.Id == basketId);
-            if (basket == null) return NotFound();
-            return Ok(basket.Items);
-        }
-
-        [HttpGet("{basketId}/items/{itemId}")]
-        public ActionResult<BasketItem> GetBasketItem(Guid basketId, int itemId)
-        {
-            var basket = Baskets.FirstOrDefault(b => b.Id == basketId);
-            if (basket == null) return NotFound();
-
-            var item = basket.Items.FirstOrDefault(i => i.Id == itemId);
-            if (item == null) return NotFound();
-            return Ok(item);
-        }
-
-        [HttpPost("{basketId}/items")]
-        public ActionResult<BasketItem> CreateBasketItem(Guid basketId, [FromBody] BasketItem item)
-        {
-            var basket = Baskets.FirstOrDefault(b => b.Id == basketId);
-            if (basket == null) return NotFound();
-            if (item == null) return BadRequest();
-
-            item.Id = basket.Items.Any() ? basket.Items.Max(i => i.Id) + 1 : 1;
-            basket.Items.Add(item);
-            return CreatedAtAction(nameof(GetBasketItem), new { basketId = basket.Id, itemId = item.Id }, item);
-        }
-
-        [HttpPut("{basketId}/items/{itemId}")]
-        public ActionResult<BasketItem> UpdateBasketItem(Guid basketId, int itemId, [FromBody] BasketItem updatedItem)
-        {
-            var basket = Baskets.FirstOrDefault(b => b.Id == basketId);
-            if (basket == null) return NotFound();
-            if (updatedItem == null) return BadRequest();
-
-            var item = basket.Items.FirstOrDefault(i => i.Id == itemId);
-            if (item == null) return NotFound();
-
-            item.ProductId = updatedItem.ProductId;
-            item.Quantity = updatedItem.Quantity;
-            item.Price = updatedItem.Price;
-            return Ok(item);
-        }
-
-        [HttpDelete("{basketId}/items/{itemId}")]
-        public IActionResult DeleteBasketItem(Guid basketId, int itemId)
-        {
-            var basket = Baskets.FirstOrDefault(b => b.Id == basketId);
-            if (basket == null) return NotFound();
-
-            var item = basket.Items.FirstOrDefault(i => i.Id == itemId);
-            if (item == null) return NotFound();
-
-            basket.Items.Remove(item);
-            return NoContent();
-        }
-    }
-
-    internal class FromUriAttribute : Attribute
-    {
     }
 }

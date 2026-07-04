@@ -56,7 +56,9 @@ type props = {
 export default function Navbar({ darkMode, changeMode }: props) {
   const { isLoading } = useAppSelector((state) => state.uiLoadIndicator);
   const { data } = useFetchBasketQuery();
-  const cartCount = data?.length;
+  const cartCount =
+    data?.items.reduce((sum, item) => sum + item.quantity, 0) ?? 0;
+
   return (
     <>
       <AppBar position="fixed">
@@ -103,7 +105,7 @@ export default function Navbar({ darkMode, changeMode }: props) {
               size="large"
               color="inherit"
             >
-              <Badge badgeContent={cartCount} color="secondary">
+              <Badge badgeContent={cartCount ?? 0} color="secondary" showZero>
                 <ShoppingCart></ShoppingCart>
               </Badge>
             </IconButton>

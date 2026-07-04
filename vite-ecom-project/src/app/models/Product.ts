@@ -5,6 +5,6 @@ export interface Product {
   image: string
   price: number
   brand:string
-  thisype:string
+  type:string
   stock:number
 }

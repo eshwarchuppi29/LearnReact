@@ -1,14 +1,11 @@
 import { Typography, Grid } from "@mui/material";
 import { useFetchBasketQuery } from "../../services/basketViewRepo";
 import BasketItem from "./BasketItem";
+import OrderSummary from "../shared/orderSummary";
 
 export default function BasketView() {
   const { data, isLoading } = useFetchBasketQuery();
-  console.log(data);
-  // const basketData = data?.items;
-  // const basketItems = basketData?.items;
-
-  const basketItems = data?.flatMap((basket) => basket.items) ?? [];
+  const basketItems = data?.items;
 
   if (isLoading) {
     return (
@@ -31,12 +28,18 @@ export default function BasketView() {
   }
 
   return (
-    <Grid container spacing={2}>
-      {basketItems.map((item) => (
-        <Grid key={item.productId}>
-          <BasketItem item={item}></BasketItem>
+    <>
+      <Grid container spacing={3}>
+        <Grid size={{ xs: 12, md: 8 }}>
+          {basketItems.map((item) => (
+            <BasketItem key={item.productId} item={item} />
+          ))}
         </Grid>
-      ))}
-    </Grid>
+
+        <Grid size={{ xs: 12, md: 4 }}>
+          <OrderSummary />
+        </Grid>
+      </Grid>
+    </>
   );
 }

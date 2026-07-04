@@ -1,23 +1,32 @@
-import { Box, Grid, IconButton, Paper, Typography } from "@mui/material";
-import type { Item } from "../../models/Basket";
 import { Add, Close, Remove } from "@mui/icons-material";
+import { Box, IconButton, Paper, Stack, Typography } from "@mui/material";
+import type { Item } from "../../models/Basket";
+import {
+  useAddBasketItemMutation,
+  useRemoveBasketItemMutation,
+} from "../../services/basketViewRepo";
+import { ConvertToIndianRupees } from "../../library/currencyFormatter";
 
 type Props = {
   item: Item;
 };
+
 export default function BasketItem({ item }: Props) {
-  console.log(item.image);
+  const [removeBasketItem] = useRemoveBasketItemMutation();
+  const [addItemToBasket] = useAddBasketItemMutation();
+
   return (
     <Paper
+      elevation={2}
       sx={{
-        height: 150,
-        borderRadius: 0,
+        p: 2,
+        mb: 2,
         display: "flex",
-        justifyContent: "space-between",
         alignItems: "center",
-        mb: 1,
+        gap: 3,
       }}
     >
+      {/* Product Image */}
       <Box
         component="img"
         src={item.image}
@@ -25,58 +34,87 @@ export default function BasketItem({ item }: Props) {
         sx={{
           width: 100,
           height: 100,
-          objectFit: "fill",
-          borderRadius: "2px",
-          mr: 8,
-          ml: 4,
+          objectFit: "cover",
+          borderRadius: 1,
+          flexShrink: 0,
         }}
-      ></Box>
-      <Box display="flex" alignItems="center" gap={2}>
+      />
+
+      {/* Product Details */}
+      <Box sx={{ flex: 1 }}>
         <Typography variant="h6">{item.name}</Typography>
-        <Typography color="primary">{item.brand}</Typography>
-        <Typography color="secondary">{item.description}</Typography>
-      </Box>
-      <Box display="flex" alignItems="center" gap={1} sx={{ margin: 10 }}>
-        <Typography sx={{ fontSize: "1.1rem" }}>
-          Rs.{item.price} X {item.quantity}
+
+        <Typography variant="body2" color="text.secondary">
+          {item.brand}
         </Typography>
-        <Typography
-          color="primary"
-          sx={{ fontSize: "1.2rem", fontWeight: 700 }}
-        >
-          Rs.{item.price * item.quantity}
+
+        <Typography variant="body2" color="text.secondary">
+          {item.description}
         </Typography>
       </Box>
-      <Grid container spacing={2} alignItems="center">
+
+      {/* Quantity Controls */}
+      <Stack direction="row" spacing={1} alignItems="center">
         <IconButton
           color="error"
-          size="small"
-          sx={{ borderRadius: 1, border: 1, minWidth: 0 }}
+          sx={{ border: 1 }}
+          onClick={() =>
+            removeBasketItem({
+              productId: item.productId,
+              quantity: 1,
+            })
+          }
         >
-          <Remove></Remove>
+          <Remove />
         </IconButton>
-        <Typography variant="h6">{item.quantity}</Typography>
+
+        <Typography fontWeight={600}>{item.quantity}</Typography>
+
         <IconButton
           color="success"
-          size="small"
-          sx={{ borderRadius: 1, border: 1, minWidth: 0 }}
+          sx={{ border: 1 }}
+          onClick={() =>
+            addItemToBasket({
+              product: {
+                productId: item.productId,
+                name: item.name,
+                description: item.description,
+                image: item.image,
+                brand: item.brand,
+                price: item.price,
+                stock: item.stock,
+                type: "",
+              },
+              quantity: 1,
+            })
+          }
         >
-          <Add></Add>
+          <Add />
         </IconButton>
-      </Grid>
+      </Stack>
+
+      {/* Price */}
+      <Box sx={{ width: 170, textAlign: "right" }}>
+        <Typography variant="body2">
+          {ConvertToIndianRupees(item.price)} × {item.quantity}
+        </Typography>
+
+        <Typography variant="h6" color="primary" fontWeight="bold">
+          {ConvertToIndianRupees(item.price * item.quantity)}
+        </Typography>
+      </Box>
+
+      {/* Delete */}
       <IconButton
         color="error"
-        size="small"
-        sx={{
-          borderRadius: 1,
-          border: 1,
-          minWidth: 0,
-          alignSelf: "start",
-          mr: 1,
-          mt: 1,
-        }}
+        onClick={() =>
+          removeBasketItem({
+            productId: item.productId,
+            quantity: item.quantity,
+          })
+        }
       >
-        <Close></Close>
+        <Close />
       </IconButton>
     </Paper>
   );

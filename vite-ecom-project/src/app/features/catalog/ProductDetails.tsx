@@ -12,12 +12,19 @@ import {
   Typography,
 } from "@mui/material";
 import { useFetchProductDetailsQuery } from "../../services/ProductList";
+import { useAddBasketItemMutation } from "../../services/basketViewRepo";
+import { useState } from "react";
 
 export default function ProductDetails() {
   const { id } = useParams<{ id: string }>();
   const { data: product, isLoading } = useFetchProductDetailsQuery(
     id ? parseInt(id) : 0,
   );
+
+  const [addItemToBasket, { isLoading: addBasketLoading }] =
+    useAddBasketItemMutation();
+
+  const [quantity, setQuantity] = useState(1);
 
   const productDetails = [
     {
@@ -92,11 +99,15 @@ export default function ProductDetails() {
                 label="Quantity in Basket"
                 fullWidth
                 defaultValue={1}
+                onChange={(e) => setQuantity(Number(e.target.value))}
+                slotProps={{ htmlInput: { min: 1 } }}
               />
             </Grid>
 
             <Grid size={6}>
               <Button
+                disabled={addBasketLoading}
+                onClick={() => addItemToBasket({ product, quantity: quantity })}
                 sx={{ height: "54px" }}
                 color="primary"
                 size="large"
@@ -112,6 +123,3 @@ export default function ProductDetails() {
     </div>
   );
 }
-
-//6362809705
-//160010807
