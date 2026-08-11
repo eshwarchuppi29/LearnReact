@@ -24,27 +24,29 @@ export default function OrderSummary() {
 
   return (
     <Box
-      display="flex"
-      flexDirection="column"
-      alignItems="center"
-      maxWidth="lg"
-      mx="auto"
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        maxWidth: 1200,
+        mx: "auto",
+      }}
     >
       <Paper sx={{ mb: 2, p: 3, width: "100%", borderRadius: 3 }}>
-        <Typography variant="h6" component="p" fontWeight="bold">
+        <Typography variant="h6" component="p" sx={{ fontWeight: "bold" }}>
           Order summary
         </Typography>
         <Typography variant="body2" sx={{ fontStyle: "italic", color: "red" }}>
           Orders over {freeDeliverAmount} qualify for free delivery!
         </Typography>
-        <Box mt={2}>
-          <Box display="flex" justifyContent="space-between" mb={1}>
+        <Box sx={{ mt: 2 }}>
+          <Box sx={{ display: "flex", justifyContent: "space-between", mb: 1 }}>
             <Typography color="textSecondary">
               Subtotal: {ConvertToIndianRupees(subtotal)}
             </Typography>
             {/* <Typography>{ConvertToIndianRupees(subtotal)}</Typography> */}
           </Box>
-          <Box display="flex" justifyContent="space-between" mb={1}>
+          <Box sx={{ display: "flex", justifyContent: "space-between", mb: 1 }}>
             <Typography color="textSecondary">
               Discount:{ConvertToIndianRupees(discount)}
             </Typography>
@@ -52,21 +54,21 @@ export default function OrderSummary() {
               {ConvertToIndianRupees(discount)}
             </Typography> */}
           </Box>
-          <Box display="flex" justifyContent="space-between" mb={1}>
+          <Box sx={{ display: "flex", justifyContent: "space-between", mb: 1 }}>
             <Typography color="textSecondary">
               Delivery fee: {ConvertToIndianRupees(deliveryFee)}
             </Typography>
             {/* <Typography>{ConvertToIndianRupees(deliveryFee)}</Typography> */}
           </Box>
           <Divider sx={{ my: 2 }} />
-          <Box display="flex" justifyContent="space-between" mb={1}>
+          <Box sx={{ display: "flex", justifyContent: "space-between", mb: 1 }}>
             <Typography color="textSecondary">
               Total: {ConvertToIndianRupees(subtotal + deliveryFee - discount)}
             </Typography>
           </Box>
         </Box>
 
-        <Box mt={2}>
+        <Box sx={{ mt: 2 }}>
           <Button
             component={Link}
             to={`/checkout`}

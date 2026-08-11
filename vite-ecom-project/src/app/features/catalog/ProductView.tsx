@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Grid } from "@mui/material";
 import type { Product } from "../../models/Product";
 import ProductCard from "./ProductCard";
 
@@ -9,18 +9,17 @@ type props = {
 export default function ProductView({ products }: props) {
   return (
     <div>
-      <Box
-        sx={{
-          display: "flex",
-          flexWrap: "wrap",
-          gap: 3,
-          justifyContent: "center",
-        }}
-      >
+      <Grid container spacing={3}>
         {products.map((item) => (
-          <ProductCard key={item.productId} product={item}></ProductCard>
+          <Grid
+            size={3}
+            sx={{ display: "flex", justifyContent: "center" }}
+            key={item.productId}
+          >
+            <ProductCard product={item}></ProductCard>
+          </Grid>
         ))}
-      </Box>
+      </Grid>
     </div>
   );
 }

@@ -28,7 +28,7 @@ export default function ProductCard({ product }: props) {
       style={{ border: "1px solid gray", margin: "10px" }}
     >
       <CardMedia
-        sx={{ height: 240, backgroundSize: "cover" }}
+        sx={{ height: 200, backgroundSize: "cover" }}
         image={product.image}
       ></CardMedia>
       <CardContent>

@@ -1,17 +1,24 @@
-import { Box, Container } from "@mui/material";
+// import { Box, Container } from "@mui/material";
 import ProductView from "./ProductView";
 import { useFetchProductsQuery } from "../../services/ProductList";
+import { Grid } from "@mui/material";
+import Filters from "./Filters";
+import { useAppSelector } from "../../store/store";
 
 export default function ProductList() {
-  const { data, isLoading } = useFetchProductsQuery();
+  const productParams = useAppSelector((state) => state.catalog);
+  const { data, isLoading } = useFetchProductsQuery(productParams);
 
   if (isLoading || !data) return <div>Loading...</div>;
   return (
-    <Container maxWidth="xl">
-      <Box
-        sx={{ display: "flex", justifyContent: "center", gap: 3, marginY: 3 }}
-      ></Box>
-      <ProductView products={data}></ProductView>
-    </Container>
+    <Grid container spacing={4}>
+      <Grid size={3}>
+        <Filters />
+      </Grid>
+
+      <Grid size={9}>
+        <ProductView products={data} />
+      </Grid>
+    </Grid>
   );
 }

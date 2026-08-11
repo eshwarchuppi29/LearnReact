@@ -24,7 +24,7 @@ namespace api_ecom_project.services
                         Description = "Samsung flagship Android smartphone with AMOLED display.",
                         Image = "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf",
                         Price = 74999,
-                        Brand="Apple",
+                        Brand="Samsung",
                         Type="Mobile",
                         Stock=150
                     },
@@ -35,8 +35,8 @@ namespace api_ecom_project.services
                         Description = "Premium wireless noise cancelling headphones.",
                         Image = "https://images.unsplash.com/photo-1505740420928-5e560c06d30e",
                         Price = 29999,
-                        Brand="Apple",
-                        Type="Mobile",
+                        Brand="Sony",
+                        Type="Headphone",
                         Stock=150
                     },
                     new ProductDTO
@@ -47,7 +47,7 @@ namespace api_ecom_project.services
                         Image = "https://images.unsplash.com/photo-1546868871-7041f2a55e12",
                         Price = 45999,
                         Brand="Apple",
-                        Type="Mobile",
+                        Type="Watch",
                         Stock=150
                     },
                     new ProductDTO
@@ -57,8 +57,8 @@ namespace api_ecom_project.services
                         Description = "High-performance laptop for developers and creators.",
                         Image = "https://images.unsplash.com/photo-1695048133142-1a20484d2569",
                         Price = 149999,
-                        Brand="Apple",
-                        Type="Mobile",
+                        Brand="Dell",
+                        Type="Computer",
                         Stock=150
                     },new ProductDTO
                     {
@@ -67,8 +67,8 @@ namespace api_ecom_project.services
                         Description = "High-performance laptop for developers and creators.",
                         Image = "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
                         Price = 149999,
-                        Brand="Apple",
-                        Type="Mobile",
+                        Brand="Dell",
+                        Type="Computer",
                         Stock=150
                     },
                     new ProductDTO
@@ -78,8 +78,8 @@ namespace api_ecom_project.services
                         Description = "High-performance laptop for developers and creators.",
                         Image = "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
                         Price = 149999,
-                        Brand="Apple",
-                        Type="Mobile",
+                        Brand="Dell",
+                        Type="Laptop",
                         Stock=150
                     },
                     new ProductDTO
@@ -89,50 +89,139 @@ namespace api_ecom_project.services
                         Description = "High-performance laptop for developers and creators.",
                         Image = "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
                         Price = 149999,
-                        Brand="Apple",
-                        Type="Mobile",
+                        Brand="Dell",
+                        Type="Laptop",
                         Stock=150
                     },
                     new ProductDTO
                     {
                         ProductId = 9,
-                        Name = "Dell XPS 15",
+                        Name = "Lenovo x 16",
                         Description = "High-performance laptop for developers and creators.",
                         Image = "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
                         Price = 149999,
+                        Brand="Lenovo",
+                        Type="Laptop",
+                        Stock=150
+                    },
+                    new ProductDTO
+                    {
+                        ProductId = 10,
+                        Name = "Lenovo",
+                        Description = "High-performance laptop for developers and creators.",
+                        Image = "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
+                        Price = 149999,
+                        Brand="Lenovo",
+                        Type="Laptop",
+                        Stock=150
+                    },
+                    new ProductDTO
+                    {
+                        ProductId = 11,
+                        Name = "iPhone 15",
+                        Description = "Apple smartphone with A16 Bionic chip and advanced camera.",
+                        Image = "https://images.unsplash.com/photo-1695048133142-1a20484d2569",
+                        Price = 79999,
                         Brand="Apple",
                         Type="Mobile",
                         Stock=150
                     },
                     new ProductDTO
                     {
-                        ProductId = 10,
-                        Name = "Dell XPS 15",
-                        Description = "High-performance laptop for developers and creators.",
-                        Image = "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
-                        Price = 149999,
-                        Brand="Apple",
-                        Type="Mobile",
-                        Stock=150
-                    },new ProductDTO
-                    {
-                        ProductId = 11,
-                        Name = "Dell XPS 15",
-                        Description = "High-performance laptop for developers and creators.",
-                        Image = "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
-                        Price = 149999,
-                        Brand="Apple",
-                        Type="Mobile",
-                        Stock=150
-                    },new ProductDTO
-                    {
                         ProductId = 12,
-                        Name = "Dell XPS 154",
+                        Name = "Samsung Galaxy S24",
+                        Description = "Samsung flagship Android smartphone with AMOLED display.",
+                        Image = "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf",
+                        Price = 74999,
+                        Brand="Samsung",
+                        Type="Mobile",
+                        Stock=150
+                    },
+                    new ProductDTO
+                    {
+                        ProductId = 13,
+                        Name = "Sony WH-1000XM5",
+                        Description = "Premium wireless noise cancelling headphones.",
+                        Image = "https://images.unsplash.com/photo-1505740420928-5e560c06d30e",
+                        Price = 29999,
+                        Brand="Sony",
+                        Type="Headphone",
+                        Stock=150
+                    },
+                    new ProductDTO
+                    {
+                        ProductId = 14,
+                        Name = "Apple Watch Series 9",
+                        Description = "Smartwatch with fitness tracking and health monitoring.",
+                        Image = "https://images.unsplash.com/photo-1546868871-7041f2a55e12",
+                        Price = 45999,
+                        Brand="Apple",
+                        Type="Watch",
+                        Stock=150
+                    },
+                    new ProductDTO
+                    {
+                        ProductId = 15,
+                        Name = "Dell XPS 15",
+                        Description = "High-performance laptop for developers and creators.",
+                        Image = "https://images.unsplash.com/photo-1695048133142-1a20484d2569",
+                        Price = 149999,
+                        Brand="Dell",
+                        Type="Computer",
+                        Stock=150
+                    },new ProductDTO
+                    {
+                        ProductId = 16,
+                        Name = "Dell XPS 15",
                         Description = "High-performance laptop for developers and creators.",
                         Image = "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
                         Price = 149999,
-                        Brand="Apple",
-                        Type="Mobile",
+                        Brand="Dell",
+                        Type="Computer",
+                        Stock=150
+                    },
+                    new ProductDTO
+                    {
+                        ProductId = 17,
+                        Name = "Dell XPS 15",
+                        Description = "High-performance laptop for developers and creators.",
+                        Image = "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
+                        Price = 149999,
+                        Brand="Dell",
+                        Type="Laptop",
+                        Stock=150
+                    },
+                    new ProductDTO
+                    {
+                        ProductId = 18,
+                        Name = "Dell XPS 15",
+                        Description = "High-performance laptop for developers and creators.",
+                        Image = "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
+                        Price = 149999,
+                        Brand="Dell",
+                        Type="Laptop",
+                        Stock=150
+                    },
+                    new ProductDTO
+                    {
+                        ProductId = 19,
+                        Name = "Lenovo x 16",
+                        Description = "High-performance laptop for developers and creators.",
+                        Image = "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
+                        Price = 149999,
+                        Brand="Lenovo",
+                        Type="Laptop",
+                        Stock=150
+                    },
+                    new ProductDTO
+                    {
+                        ProductId = 20,
+                        Name = "Lenovo",
+                        Description = "High-performance laptop for developers and creators.",
+                        Image = "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
+                        Price = 149999,
+                        Brand="Lenovo",
+                        Type="Laptop",
                         Stock=150
                     }
                 };

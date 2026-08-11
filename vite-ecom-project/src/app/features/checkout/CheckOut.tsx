@@ -75,27 +75,33 @@ export default function CheckOut() {
 
               <Divider sx={{ my: 2 }} />
 
-              <Box display="flex" justifyContent="space-between" mb={1}>
+              <Box
+                sx={{ display: "flex", justifyContent: "space-between", mb: 1 }}
+              >
                 <Typography>Items Total</Typography>
                 <Typography>₹2,499</Typography>
               </Box>
 
-              <Box display="flex" justifyContent="space-between" mb={1}>
+              <Box
+                sx={{ display: "flex", justifyContent: "space-between", mb: 1 }}
+              >
                 <Typography>Delivery</Typography>
                 <Typography color="success.main">FREE</Typography>
               </Box>
 
-              <Box display="flex" justifyContent="space-between" mb={1}>
+              <Box
+                sx={{ display: "flex", justifyContent: "space-between", mb: 1 }}
+              >
                 <Typography>GST</Typography>
                 <Typography>₹450</Typography>
               </Box>
 
               <Divider sx={{ my: 2 }} />
 
-              <Box display="flex" justifyContent="space-between">
-                <Typography fontWeight="bold">Total</Typography>
+              <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+                <Typography sx={{ fontWeight: "bold" }}>Total</Typography>
 
-                <Typography fontWeight="bold" color="primary">
+                <Typography sx={{ fontWeight: "bold" }} color="primary">
                   ₹2,949
                 </Typography>
               </Box>

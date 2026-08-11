@@ -1,0 +1,12 @@
+D:\JobChange\React\ecommerceapp\api-ecom-project\api-ecom-project\publish\api-ecom-project.exe
+D:\JobChange\React\ecommerceapp\api-ecom-project\api-ecom-project\publish\appsettings.Development.json
+D:\JobChange\React\ecommerceapp\api-ecom-project\api-ecom-project\publish\appsettings.json
+D:\JobChange\React\ecommerceapp\api-ecom-project\api-ecom-project\publish\api-ecom-project.dll
+D:\JobChange\React\ecommerceapp\api-ecom-project\api-ecom-project\publish\api-ecom-project.deps.json
+D:\JobChange\React\ecommerceapp\api-ecom-project\api-ecom-project\publish\api-ecom-project.runtimeconfig.json
+D:\JobChange\React\ecommerceapp\api-ecom-project\api-ecom-project\publish\api-ecom-project.pdb
+D:\JobChange\React\ecommerceapp\api-ecom-project\api-ecom-project\publish\Microsoft.AspNetCore.OpenApi.dll
+D:\JobChange\React\ecommerceapp\api-ecom-project\api-ecom-project\publish\Microsoft.OpenApi.dll
+D:\JobChange\React\ecommerceapp\api-ecom-project\api-ecom-project\publish\Swashbuckle.AspNetCore.Swagger.dll
+D:\JobChange\React\ecommerceapp\api-ecom-project\api-ecom-project\publish\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\JobChange\React\ecommerceapp\api-ecom-project\api-ecom-project\publish\Swashbuckle.AspNetCore.SwaggerUI.dll

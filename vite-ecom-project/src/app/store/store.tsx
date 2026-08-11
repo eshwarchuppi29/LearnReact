@@ -6,6 +6,7 @@ import { loadIndicator } from "../layouts/loader";
 import { darkTheme } from "../settings/themeSetting";
 import { errorResponseApi } from "../services/errorResponse";
 import { basketViewRepo } from "../services/basketViewRepo";
+import { catalogSlice } from "../features/catalog/CatalogSlice";
 
 // import currentReducer from "../features/contact/counterReduce";
 // export function configureTheStore() {
@@ -20,6 +21,7 @@ export const store = configureStore({
     counter: counterSlice.reducer,
     uiLoadIndicator: loadIndicator.reducer,
     themeChange: darkTheme.reducer,
+    catalog: catalogSlice.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(

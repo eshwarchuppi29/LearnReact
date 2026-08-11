@@ -54,7 +54,7 @@ export default function BasketItem({ item }: Props) {
       </Box>
 
       {/* Quantity Controls */}
-      <Stack direction="row" spacing={1} alignItems="center">
+      <Stack direction="row" spacing={1} sx={{ alignItems: "center" }}>
         <IconButton
           color="error"
           sx={{ border: 1 }}
@@ -68,7 +68,7 @@ export default function BasketItem({ item }: Props) {
           <Remove />
         </IconButton>
 
-        <Typography fontWeight={600}>{item.quantity}</Typography>
+        <Typography sx={{ fontWeight: 600 }}>{item.quantity}</Typography>
 
         <IconButton
           color="success"
@@ -82,7 +82,7 @@ export default function BasketItem({ item }: Props) {
                 image: item.image,
                 brand: item.brand,
                 price: item.price,
-                stock: item.stock,
+                stock: 0,
                 type: "",
               },
               quantity: 1,
@@ -99,7 +99,7 @@ export default function BasketItem({ item }: Props) {
           {ConvertToIndianRupees(item.price)} × {item.quantity}
         </Typography>
 
-        <Typography variant="h6" color="primary" fontWeight="bold">
+        <Typography variant="h6" color="primary" sx={{ fontWeight: "bold" }}>
           {ConvertToIndianRupees(item.price * item.quantity)}
         </Typography>
       </Box>

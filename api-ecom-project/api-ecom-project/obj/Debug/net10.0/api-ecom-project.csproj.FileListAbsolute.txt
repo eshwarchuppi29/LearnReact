@@ -32,3 +32,12 @@ D:\JobChange\React\ecommerceapp\api-ecom-project\api-ecom-project\obj\Debug\net1
 D:\JobChange\React\ecommerceapp\api-ecom-project\api-ecom-project\obj\Debug\net10.0\api-ecom-project.pdb
 D:\JobChange\React\ecommerceapp\api-ecom-project\api-ecom-project\obj\Debug\net10.0\api-ecom-project.genruntimeconfig.cache
 D:\JobChange\React\ecommerceapp\api-ecom-project\api-ecom-project\obj\Debug\net10.0\ref\api-ecom-project.dll
+D:\JobChange\React\ecommerceapp\api-ecom-project\api-ecom-project\bin\Debug\net10.0\publish\web.config
+D:\JobChange\React\ecommerceapp\api-ecom-project\api-ecom-project\bin\Debug\net10.0\publish\api-ecom-project.deps.json
+D:\JobChange\React\ecommerceapp\api-ecom-project\api-ecom-project\bin\Debug\net10.0\publish\api-ecom-project.runtimeconfig.json
+D:\JobChange\React\ecommerceapp\api-ecom-project\api-ecom-project\bin\Debug\net10.0\publish\api-ecom-project.staticwebassets.endpoints.json
+D:\JobChange\React\ecommerceapp\api-ecom-project\api-ecom-project\bin\Debug\net10.0\publish\appsettings.Development.json
+D:\JobChange\React\ecommerceapp\api-ecom-project\api-ecom-project\bin\Debug\net10.0\publish\appsettings.json
+D:\JobChange\React\ecommerceapp\api-ecom-project\api-ecom-project\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\JobChange\React\ecommerceapp\api-ecom-project\api-ecom-project\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\JobChange\React\ecommerceapp\api-ecom-project\api-ecom-project\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll

@@ -15,3 +15,13 @@ export function ConverToUSDolor(amount: number): string {
     });
     return formatter.format(amount);
 }
+
+export function ProductParamsToQueryString(productParams: object)
+{
+    const removeEmptyParams = Object.fromEntries(Object.entries(productParams)
+    .filter(([,value])=>value!=="" && value!==null 
+        && value!==undefined 
+        && !(Array.isArray(value) 
+        && value.length===0)));
+    return removeEmptyParams;
+}

@@ -3,6 +3,10 @@ import { startLoading, stopLoading } from "../layouts/loader";
 import { toast } from "react-toastify";
 import { router } from "../routes/Routes";
 
+// const customBaseQuery= fetchBaseQuery({
+//      baseUrl: "http://192.168.31.173:91/api"
+// })
+
 const customBaseQuery= fetchBaseQuery({
      baseUrl: "http://localhost:5199/api"
 })

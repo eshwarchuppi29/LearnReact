@@ -1,0 +1,15 @@
+C:\inetpub\wwwroot\CoreStoreApi\api-ecom-project.exe
+C:\inetpub\wwwroot\CoreStoreApi\publish\web.config
+C:\inetpub\wwwroot\CoreStoreApi\appsettings.Development.json
+C:\inetpub\wwwroot\CoreStoreApi\appsettings.json
+C:\inetpub\wwwroot\CoreStoreApi\publish\api-ecom-project.deps.json
+C:\inetpub\wwwroot\CoreStoreApi\publish\api-ecom-project.runtimeconfig.json
+C:\inetpub\wwwroot\CoreStoreApi\publish\api-ecom-project.staticwebassets.endpoints.json
+C:\inetpub\wwwroot\CoreStoreApi\publish\appsettings.Development.json
+C:\inetpub\wwwroot\CoreStoreApi\publish\appsettings.json
+C:\inetpub\wwwroot\CoreStoreApi\api-ecom-project.dll
+C:\inetpub\wwwroot\CoreStoreApi\api-ecom-project.deps.json
+C:\inetpub\wwwroot\CoreStoreApi\api-ecom-project.runtimeconfig.json
+C:\inetpub\wwwroot\CoreStoreApi\api-ecom-project.pdb
+C:\inetpub\wwwroot\CoreStoreApi\Microsoft.AspNetCore.OpenApi.dll
+C:\inetpub\wwwroot\CoreStoreApi\Microsoft.OpenApi.dll

@@ -16,15 +16,23 @@ builder.Services.AddCors(options =>
         });
 });
 
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 var app = builder.Build();
 
 app.UseCors("AllowReactApp");
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-}
+// if (app.Environment.IsDevelopment())
+// {
+//     app.MapOpenApi();
+// }
+
+// app.MapOpenApi();
+
+app.UseSwagger();
+app.UseSwaggerUI();
 app.MapControllers();
 
 app.UseHttpsRedirection();
